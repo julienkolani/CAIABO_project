@@ -16,11 +16,11 @@ import dataBase
 
 # Variables globales
 
-token = '5729959955:AAHLojA6jmjsbbiim4lI_69swT8hxi9ML9A' 
+token = 'Votre token télégram ' 
 
 """Vous allez biensur devoir utiliser vos propres token et clé d'API"""
 
-openai.api_key = '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'
+openai.api_key = ' Api key '
 
 now = datetime.datetime.now()
 heure_actuelle = now.strftime('%Y-%m-%d %H:%M:%S')
@@ -44,10 +44,6 @@ def requestMessageToApi (message):
     memoire = dataBase.read_memoire_info()
     history = dataBase.read_history(message.chat_id)
     question = message.text
-
-    print(json.dumps(memoire))
-    print(json.dumps(history))
-    print(json.dumps(question))
 
     # Création de la requête d'achèvement de conversation OpenAI
     response = openai.ChatCompletion.create(
